@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Admin — 3×3</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="app.global.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Panel (3 jueces + 3 público)</h1>
+
+    <!-- Formulario para crear encuesta -->
+    <div class="card grid grid-2">
+      <div>
+        <input id="title" placeholder="Título de la encuesta"/>
+        <div class="small">
+          Se generan códigos: <code>JUEZ1..3</code> y <code>PUBLICO1..3</code> automáticamente
+        </div>
+        <div class="flex">
+          <button id="createPoll">Crear</button>
+        </div>
+      </div>
+
+      <!-- QR y enlaces -->
+      <div>
+        <div id="qrBox" class="card" style="min-height:260px;display:flex;align-items:center;justify-content:center;">
+          QR aquí
+        </div>
+        <div class="flex">
+          <button id="copyLink" class="secondary">Copiar link de voto</button>
+          <a id="resultsLink" href="#" target="_blank">
+            <button class="secondary">Ver resultados</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de encuestas -->
+    <h2>Encuestas</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Estado</th>
+            <th>Creada</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <tr><td colspan="4" class="small">Cargando…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>

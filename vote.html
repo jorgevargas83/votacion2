@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Votar — 3×3</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="app.global.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="pTitle">Votación</h1>
+    <div class="card grid">
+      
+      <!-- Estado de la encuesta -->
+      <div class="flex">
+        <span id="stateTag" class="tag">Estado</span>
+      </div>
+
+      <!-- Campo para código -->
+      <div class="card">
+        <div class="flex">
+          <input id="code" placeholder="Código (JUEZ1..3 / PUBLICO1..3)"/>
+          <button id="check">Continuar</button>
+        </div>
+        <p id="roleInfo" class="small">Solo un voto por código.</p>
+      </div>
+
+      <!-- Área de voto -->
+      <div id="voteArea" class="card" style="display:none">
+        <label for="score">Puntaje (0–10)</label>
+        <input type="range" id="score" min="0" max="10" step="0.1" value="0">
+        <div class="flex">
+          <span class="big" id="scoreValue">0.0</span>
+          <div class="bar" style="flex:1"><span id="scoreBar"></span></div>
+        </div>
+        <button id="submitVote">Enviar voto</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="vote.js" defer></script>
+</body>
+</html>

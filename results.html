@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Resultados — 3×3</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="app.global.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Resultados</h1>
+
+    <!-- Selector de encuesta si no hay ?poll en la URL -->
+    <div id="pick" class="card" style="display:none">
+      <h3>Elige una encuesta</h3>
+      <div id="list"></div>
+    </div>
+
+    <!-- Tablero de resultados -->
+    <div id="board" style="display:none" class="grid grid-2">
+
+      <div class="card">
+        <h3 id="rTitle">—</h3>
+        <p><span id="rState" class="tag">—</span></p>
+        <p class="small">Cálculo: jueces (0–30) + público (0–10) = máx 40.</p>
+      </div>
+
+      <div class="card">
+        <h3>Jueces (0–30)</h3>
+        <ul id="judges"></ul>
+        <div class="bar"><span id="barJ"></span></div>
+        <p>Total jueces: <strong id="sumJ">0.00</strong> / 30</p>
+      </div>
+
+      <div class="card">
+        <h3>Público (promedio 0–10)</h3>
+        <ul id="public"></ul>
+        <div class="bar"><span id="barP"></span></div>
+        <p>Promedio público: <strong id="avgP">0.00</strong> / 10</p>
+      </div>
+
+      <div class="card" style="grid-column:1/-1">
+        <h3>Total</h3>
+        <div class="bar"><span id="barT"></span></div>
+        <p><strong id="total">0.00</strong> / 40</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="results.js" defer></script>
+</body>
+</html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Resultados — 3×3</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="app.global.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Resultados</h1>
+
+    <!-- Selector de encuesta si no hay ?poll en la URL -->
+    <div id="pick" class="card" style="display:none">
+      <h3>Elige una encuesta</h3>
+      <div id="list"></div>
+    </div>
+
+    <!-- Tablero de resultados -->
+    <div id="board" style="display:none" class="grid grid-2">
+
+      <div class="card">
+        <h3 id="rTitle">—</h3>
+        <p><span id="rState" class="tag">—</span></p>
+        <p class="small">Cálculo: jueces (0–30) + público (0–10) = máx 40.</p>
+      </div>
+
+      <div class="card">
+        <h3>Jueces (0–30)</h3>
+        <ul id="judges"></ul>
+        <div class="bar"><span id="barJ"></span></div>
+        <p>Total jueces: <strong id="sumJ">0.00</strong> / 30</p>
+      </div>
+
+      <div class="card">
+        <h3>Público (promedio 0–10)</h3>
+        <ul id="public"></ul>
+        <div class="bar"><span id="barP"></span></div>
+        <p>Promedio público: <strong id="avgP">0.00</strong> / 10</p>
+      </div>
+
+      <div class="card" style="grid-column:1/-1">
+        <h3>Total</h3>
+        <div class="bar"><span id="barT"></span></div>
+        <p><strong id="total">0.00</strong> / 40</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="results.js" defer></script>
+</body>
+</html>
