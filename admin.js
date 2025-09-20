@@ -4,8 +4,10 @@
     toast = App.toast,
     copy = App.copy;
 
-  function pollUrl(id) {
-    return location.origin + "/vote.html?poll=" + id;
+ function pollUrl(id) {
+  return "https://votacion2.vercel.app/vote.html?poll=" + id;
+}
+
   }
 
   async function createDefaults(poll_id) {
@@ -164,3 +166,4 @@
 
   loadPolls();
 })();
+
