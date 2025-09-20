@@ -115,3 +115,46 @@ input {
   background: var(--acc);
   width: 0;
 }
+
+
+/* =========================
+   QR: nitidez y quiet zone
+   ========================= */
+#qrBox {
+  background: #ffffff;         /* quiet zone/fondo blanco real */
+  padding: 12px;               /* margen alrededor del código */
+  border-radius: 12px;
+  display: inline-flex;        /* evita estiramientos raros en grid */
+  align-items: center;
+  justify-content: center;
+  /* que no se comprima por el grid si la columna es angosta */
+  min-width: 336px;
+  min-height: 336px;
+}
+
+/* Muy importante: NO permitir que el tema escale el canvas/img del QR */
+#qrBox canvas,
+#qrBox img {
+  max-width: none !important;
+  width: 336px !important;
+  height: 336px !important;
+  image-rendering: pixelated;  /* sin suavizado */
+}
+
+/* En pantallas muy angostas, reducimos tamaño con proporción fija */
+@media (max-width: 380px) {
+  #qrBox {
+    min-width: 288px;
+    min-height: 288px;
+  }
+  #qrBox canvas,
+  #qrBox img {
+    width: 288px !important;
+    height: 288px !important;
+  }
+}
+
+/* (Opcional) que la grilla pase a 1 columna en móviles */
+@media (max-width: 860px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
